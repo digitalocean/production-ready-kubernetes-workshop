@@ -13,8 +13,8 @@ provider "digitalocean" {
   token = var.do_token
 }
 
-resource "digitalocean_kubernetes_cluster" "kubecon-cluster" {
-  name   = "kubecon-cluster"
+resource "digitalocean_kubernetes_cluster" "workshop-cluster" {
+  name   = "workshop-cluster"
   # Find and change the value to an availble datacenter region close to you
   # See DO datacenter regions with the command doctl compute region list
   region = "ams3"
@@ -25,7 +25,7 @@ resource "digitalocean_kubernetes_cluster" "kubecon-cluster" {
   ha = true
 
   node_pool {
-    name       = "kubecon-node"
+    name       = "workshop-node"
     # This is a Basic AMD Droplet with 2 vCPUs and 4GB RAM
     # show droplet sizes with the command doctl compute size list
     size       = "s-2vcpu-4gb-amd"
