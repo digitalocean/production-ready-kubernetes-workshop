@@ -1,4 +1,4 @@
-# Chapter 1 - Create a DigitalOcean Kubernetes Cluster with Terraform
+# Chapter 0 - Create a DigitalOcean Kubernetes Cluster with Terraform
 
 ## Rationale 
 In order to setup a GitOps workflow, you need to use an Infrastructure as Code (IaC) tool so you can define  infrastructure in files that can be tracked by a source control tool like Git. 
@@ -21,9 +21,11 @@ Documentation](https://kubernetes.io/docs/concepts/overview/components/)
 ## Instructions 
 ### Step 1 - Clone and change into the workshop repository 
  
-Go to Github and fork clone the [KubeCon EU 2022 Workshop Repo](https://github.com/digitalocean/kubecon-2022-doks-workshop/) and then change into the directory. 
+Go to Github and fork clone the [KubeCon EU 2022 Workshop Repo](https://github.com/digitalocean/production-ready-kubernetes-workshop) and then change into the directory. 
 
-**Note** Make sure to update the command with your github username.
+**Note** 
+
+Make sure to update the command with your github username.
 
 To clone with SSH: 
 ```sh
@@ -33,8 +35,8 @@ cd kubecon-2022-doks-workshop
 
 To clone with HTTPS: 
 ```
-git clone https://github.com/<GITHUB_USERNAME>/kubecon-2022-doks-workshop.git
-cd kubecon-2022-doks-workshop
+git clone https://github.com/<GITHUB_USERNAME>/production-ready-kubernetes-workshop.git
+cd production-ready-kubernetes-workshop
 ```
 
 ### Step 2 - Configure `doctl` 
@@ -44,7 +46,9 @@ cd kubecon-2022-doks-workshop
 export DO_TOKEN="<YOUR_DO_TOKEN>"
 ```
 
-**Note:** Since Windows doesn't support enviornment variables, Windows users should keep the token on their clipboard to easily paste.
+**Note:** 
+
+Since Windows doesn't support enviornment variables, Windows users should keep the token on their clipboard to easily paste.
 
 3. [Use the API token to grant account access to doctl](https://docs.digitalocean.com/reference/doctl/how-to/install/#step-3-use-the-api-token-to-grant-account-access-to-doctl)
 ```sh
