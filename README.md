@@ -17,11 +17,18 @@ You will need to install these tools in order to complete this workshop:
 
 - [A DigitalOcean Account](https://cloud.digitalocean.com/registrations/new)
 - [doctl](https://docs.digitalocean.com/reference/doctl/how-to/install/)
+- [Docker](https://docs.docker.com/get-docker/)
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli#install-terraform) 
 - [Helm](https://helm.sh/docs/intro/install/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [A Github Account](https://github.com/signup)
 
+### Troubleshooting Tips 
+If you get stuck during the workshop, please try the following things in order: 
+
+1. Reread the instructions and try the last command again
+1. Google the error
+1. Ask for help in the Zoom Chat
 
 ### Learn More
 If you enjoyed this workshop, please checkout some of DigitalOcean's other Kubernetes learning materials at our [Kubernetes Resources Page](https://www.digitalocean.com/landing/doks-resources). 
