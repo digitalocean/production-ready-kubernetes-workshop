@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: one-time-secret
-  namespace: app-namespace
+  namespace: secrets-app
   labels:
     app: ots
 spec:
@@ -21,11 +21,12 @@ spec:
         image: mmegger/one-time-secret:2022-06-20
         ports:
         - containerPort: 80
+        # Change the DB_PASSWORD and DB_HOST values to those for your Redis cluster
         env:
         - name: DB_PASSWORD
-          value: "AVNS_KRHCUmr_Lg-lrYpq66k"
+          value: "<REDIS_PASSWORD>"
         - name: DB_HOST
-          value: "oss2022-do-user-1742897-0.b.db.ondigitalocean.com" 
+          value: "<REDIS_HOST_URL>"
         - name: DB_PORT
           value: "25061"
         - name: DB_SSL
