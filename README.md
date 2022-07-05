@@ -1,5 +1,17 @@
 # Hands On Workshop: Production Ready Kubernetes
 
+### Welcome! 
+The goal of this workshop is for you to deploy a containerized Python application to a Kubernetes cluster, expose it to the internet, and setup a GitOps Pipeline with ArgoCD. 
+
+### Content 
+- [Chapter 0 - Create a DigitalOcean Kubernetes Cluster with Terraform](./00-cluster-setup.md)
+- [Chapter 1 - Containerize an Application](./01-app-setup.md)
+- [Chapter 2 - Deploy the Application to Kubernetes](./02-deploy-app.md)
+- [Chapter 3 - Setup ArgoCD](./03-argocd-setup.md)
+- [Chapter 4 - Experience the GitOps Pipleine](./04-gitops-pipeline.md)
+- [Chapter 5 - Destroy a DigitalOcean Kubernetes Cluster with Terraform](./05-cluster-teardown.md)
+
+
 ### Prerequisites
 You will need to install these tools in order to complete this workshop: 
 

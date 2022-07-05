@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: one-time-secret
+  namespace: app-namespace
+  labels:
+    app: ots
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ots
+  template:
+    metadata:
+      labels:
+        app: ots
+    spec:
+      containers:
+      - name: ots
+        # Change the image address to your version
+        image: mmegger/one-time-secret:2022-06-20
+        ports:
+        - containerPort: 80
+        env:
+        - name: DB_PASSWORD
+          value: "AVNS_KRHCUmr_Lg-lrYpq66k"
+        - name: DB_HOST
+          value: "oss2022-do-user-1742897-0.b.db.ondigitalocean.com" 
+        - name: DB_PORT
+          value: "25061"
+        - name: DB_SSL
+          value: "True"
+        # Uncomment this block to add resource requests and limits
+        # resources:
+        #   requests:
+        #     cpu: 30m
+        #     memory: 64Mi
+        #   limits:
+        #     cpu: 100m
+        #     memory: 128Mi
