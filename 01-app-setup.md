@@ -2,8 +2,8 @@
 
 ### Instructions
 1. Fork and Clone the [Workshop Repository](https://github.com/digitalocean/production-ready-kubernetes-workshop)
-1. Have a developer environment setup
-    1. Install on your local device
+1. Have your developer environment setup
+    1. You will need Docker and httpie on your local device
         1. Install [Docker](https://docs.docker.com/get-docker/)
         1. Install [httpie](https://httpie.io/cli)
 
@@ -14,7 +14,8 @@
 1. (Optional) Review API endpoints in the [Appendix](./06-appendix.md)
 
 1. (Optional) Create a Redis Cluster.
-Note: you can deploy the application without a Redis cluster, but there will be no data persistence.
+    - You can deploy the application without a Redis cluster, but there will be no data persistence.
+
     ```bash
     doctl databases create workshop-redis-cluster --engine redis --region sfo3
     ```
@@ -51,6 +52,11 @@ Note: you can deploy the application without a Redis cluster, but there will be 
         }
         ```
 
+1. Create a DO Container Registry 
+    ```bash
+    doctl registry create <your-registry-name> --region sfo3
+    ```
+
 1. Use the registry login command to authenticate Docker with your registry:
     ```bash
     doctl registry login
@@ -61,26 +67,16 @@ Note: you can deploy the application without a Redis cluster, but there will be 
     docker tag ots registry.digitalocean.com/<your-registry>/ots:0.0.1
     ```
 
-
 1. Use the docker push command to upload your image:
     ```bash
     docker push registry.digitalocean.com/<your-registry>/ots:0.0.1
     ```
 
-Note: If you push a new image using an existing tag, the tag gets updated but the old image is still accessible by its digest and takes up space in your registry. To reduce your storage usage, you can delete the untagged images and then run garbage collection.
-
-
 1. Allow your image to be used with your Kubernetes Cluster
-To create containers from the images stored in your registry from the control panel:
     - Visit the registry page and click the Settings tab.
     - In the DigitalOcean Kubernetes integration section, click Edit to display the available Kubernetes clusters.
     - Select the clusters and click Save.
     - The default service account in each of those namespaces is updated to include the secret in its image pull secret.
 
-
 ### Learn More
 - [DigitalOcean Container Registry Quickstart](https://docs.digitalocean.com/products/container-registry/quickstart/)
-- []()
-- [Starter Kit]()
-
-    
