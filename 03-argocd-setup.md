@@ -36,37 +36,36 @@ After finishing all the steps from this tutorial, you should have a `DOKS` clust
     ```shell
     helm ls -n argocd
     ```
-  The output looks similar to (`STATUS` column value should be set to `deployed`):
+    The output looks similar to (`STATUS` column value should be set to `deployed`):
   ```text
   NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
   argocd  argocd          1               2022-03-23 11:22:48.486199 +0200 EET    deployed        argo-cd-4.2.1   v2.3.1
   ```
 1. Verify Argo CD application deployment status:
-  ```shell
-  kubectl get deployments -n argocd
-  ```
-  The output looks similar to (check the `READY` column - all `Pods` must be running):
-
-  ```text
-  NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
-  argocd-applicationset-controller   1/1     1            1           2m9s
-  argocd-dex-server                  1/1     1            1           2m9s
-  argocd-notifications-controller    1/1     1            1           2m9s
-  argocd-redis-ha-haproxy            3/3     3            3           2m9s
-  argocd-repo-server                 2/2     2            2           2m9s
-  argocd-server                      2/2     2            2           2m9s
-  ```
-  Argo CD server must have a `replicaset` minimum value of `2` for the `HA` mode. If for some reason some deployments are not healthy, please check Kubernetes events and logs for the affected component Pods.
+    ```shell
+    kubectl get deployments -n argocd
+    ```
+    The output looks similar to (check the `READY` column - all `Pods` must be running):
+    ```text
+    NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
+    argocd-applicationset-controller   1/1     1            1           2m9s
+    argocd-dex-server                  1/1     1            1           2m9s
+    argocd-notifications-controller    1/1     1            1           2m9s
+    argocd-redis-ha-haproxy            3/3     3            3           2m9s
+    argocd-repo-server                 2/2     2            2           2m9s
+    argocd-server                      2/2     2            2           2m9s
+    ```
+    Argo CD server must have a `replicaset` minimum value of `2` for the `HA` mode. If for some reason some deployments are not healthy, please check Kubernetes events and logs for the affected component Pods.
 
 ## Step 2 - Access and Explore the Argo CD Web Interface
 1. Port forward the `argocd-server` Kubernetes service
-  ```shell
-  kubectl port-forward svc/argocd-server -n argocd 8080:443
-  ```
+    ```shell
+    kubectl port-forward svc/argocd-server -n argocd 8080:443
+    ```
 1. Open a web browser and navigate to [localhost:8080](http://localhost:8080) (please ignore the invalid TLS certificates for now). You will be greeted with the Argo CD log in page. The default administrator username is `admin`, and the password is generated randomly at installation time. You can fetch it by running below command:
-  ```shell
-  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
-  ```
+    ```shell
+    kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+    ```
 1. Next, you will be redirected to the applications dashboard page. From here you can view, create or manage applications via the UI (an YAML editor is also available), as well as perform sync or refresh operations:
 
 ## Step 3 - Bootstrap an ArgoCD Application
