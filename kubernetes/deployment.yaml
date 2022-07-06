@@ -22,6 +22,7 @@ spec:
         ports:
         - containerPort: 80
         # Change the DB_PASSWORD and DB_HOST values to those for your Redis cluster
+        # This is a good opportunity to encrypt your credentials using the Sealed Secrets project
         env:
         - name: DB_PASSWORD
           value: "<REDIS_PASSWORD>"
@@ -31,11 +32,10 @@ spec:
           value: "25061"
         - name: DB_SSL
           value: "True"
-        # Uncomment this block to add resource requests and limits
-        # resources:
-        #   requests:
-        #     cpu: 30m
-        #     memory: 64Mi
-        #   limits:
-        #     cpu: 100m
-        #     memory: 128Mi
+        resources:
+          requests:
+            cpu: 30m
+            memory: 64Mi
+          limits:
+            cpu: 100m
+            memory: 128Mi

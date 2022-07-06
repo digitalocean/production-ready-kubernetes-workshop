@@ -1,17 +1,17 @@
 # Chapter 1 - Containerize an Application
 
-### Instructions
+## Instructions
 1. Fork and Clone the [Workshop Repository](https://github.com/digitalocean/production-ready-kubernetes-workshop)
 1. Have your developer environment setup
     1. You will need Docker and httpie on your local device
         1. Install [Docker](https://docs.docker.com/get-docker/)
-        1. Install [httpie](https://httpie.io/cli)
+        1. (optional) Install [httpie](https://httpie.io/cli) 
 
 1. Navigate to the Python Directory
     ```bash
     cd python
     ```
-1. (Optional) Review API endpoints in the [Appendix](./06-appendix.md)
+1. (Optional) Review API endpoints in the [Appendix](./06-appendix.md#api-endpoints-for-the-ots-app)
 
 1. (Optional) Create a Redis Cluster.
     - You can deploy the application without a Redis cluster, but there will be no data persistence.
