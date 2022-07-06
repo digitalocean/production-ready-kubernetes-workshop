@@ -11,7 +11,7 @@
     ```bash
     cd python
     ```
-1. (Optional) Review API endpoints in the [Appendix](./06-appendix.md#api-endpoints-for-the-ots-app)
+1. (Optional) Review API endpoints in the [Appendix](./05-appendix.md#api-endpoints-for-the-ots-app)
 
 1. (Optional) Create a Redis Cluster.
     - You can deploy the application without a Redis cluster, but there will be no data persistence.
