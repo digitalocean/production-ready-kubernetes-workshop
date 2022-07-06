@@ -13,20 +13,17 @@ After finishing all the steps from this tutorial, you should have a `DOKS` clust
 
 ## Instructions
 ### Step 1 - Install Argo CD
-  1. Add the Argo CD Helm repository:
+1. Add the Argo CD Helm repository:
     ```shell
     helm repo add argo https://argoproj.github.io/argo-helm
 
     helm repo update argo 
     ```
-  1. Inspect the Argo CD Helm values file.
-
+1. Inspect the Argo CD Helm values file.
     ```shell
     code argo/argo-values.yaml
     ```
-
-  1. Deploy Argo CD to your DOKS cluster:
-
+1. Deploy Argo CD to your DOKS cluster:
     ```shell
     HELM_CHART_VERSION="4.9.7"
 
@@ -35,12 +32,7 @@ After finishing all the steps from this tutorial, you should have a `DOKS` clust
       --create-namespace \
       -f "argo/values.yaml"
     ```
-
-**Note:**
-
-A `specific` version for the `Helm` chart is used. In this case `4.9.7` is picked, which maps to the `2.4.2` version of the application. It’s good practice in general, to lock on a specific version. This helps to have predictable results, and allows versioning control via `Git`.
-
-  1. Check if the Helm release was successful:
+1. Check if the Helm release was successful:
 
   ```shell
   helm ls -n argocd
@@ -53,7 +45,7 @@ NAME    NAMESPACE       REVISION        UPDATED                                 
 argocd  argocd          1               2022-03-23 11:22:48.486199 +0200 EET    deployed        argo-cd-4.2.1   v2.3.1
 ```
 
-  1. Verify Argo CD application deployment status:
+1. Verify Argo CD application deployment status:
 
   ```shell
   kubectl get deployments -n argocd
