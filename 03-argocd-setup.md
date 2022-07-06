@@ -40,12 +40,14 @@ After finishing all the steps from this tutorial, you should have a `DOKS` clust
     ```text
     NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
     argocd  argocd          1               2022-03-23 11:22:48.486199 +0200 EET    deployed        argo-cd-4.2.1   v2.3.1
-  ```
+    ```
 1. Verify Argo CD application deployment status:
     ```shell
     kubectl get deployments -n argocd
     ```
+
     The output looks similar to (check the `READY` column - all `Pods` must be running):
+
     ```text
     NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
     argocd-applicationset-controller   1/1     1            1           2m9s
