@@ -21,7 +21,7 @@ resource "digitalocean_kubernetes_cluster" "workshop-cluster" {
   auto_upgrade = true
   # Grab the latest DO Kubernetes version slug 
   # See the available versions with the command doctl kubernetes options versions
-  version = "1.22.8-do.1"
+  version = "1.22.11-do.0"
   ha = true
 
   node_pool {
