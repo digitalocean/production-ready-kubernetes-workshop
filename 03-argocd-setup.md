@@ -36,10 +36,10 @@ After finishing all the steps from this tutorial, you should have a `DOKS` clust
     ```shell
     helm ls -n argocd
     ```
-    The output looks similar to (`STATUS` column value should be set to `deployed`):
-  ```text
-  NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-  argocd  argocd          1               2022-03-23 11:22:48.486199 +0200 EET    deployed        argo-cd-4.2.1   v2.3.1
+1. The output looks similar to (`STATUS` column value should be set to `deployed`):
+    ```text
+    NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+    argocd  argocd          1               2022-03-23 11:22:48.486199 +0200 EET    deployed        argo-cd-4.2.1   v2.3.1
   ```
 1. Verify Argo CD application deployment status:
     ```shell
