@@ -13,5 +13,5 @@ pycparser==2.21
 pyparsing==3.0.9
 redis==4.3.3
 text-password-protect==0.2.0
-Werkzeug==2.1.2
+Werkzeug==3.0.1
 wrapt==1.14.1
